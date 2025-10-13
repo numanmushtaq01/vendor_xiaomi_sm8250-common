@@ -92,6 +92,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.qti.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.media.c2@1.0-service.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
+    vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc \
     vendor/xiaomi/sm8250-common/proprietary/vendor/etc/init/vppservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vppservice.rc \
@@ -149,6 +150,7 @@ PRODUCT_PACKAGES += \
     libq3dtools_adreno \
     libq3dtools_esx \
     displayfeature.default \
+    vendor.xiaomi.hardware.citsensorservice@1.1-impl \
     vendor.xiaomi.hardware.displayfeature@1.0-impl \
     vulkan.adreno \
     libC2D2 \
@@ -159,6 +161,7 @@ PRODUCT_PACKAGES += \
     libadsprpc \
     libc2d30_bltlib \
     libcdsprpc \
+    libclient2slpi.notifier \
     libdapparamstorage \
     libdiag \
     libdisplayfeature \
@@ -173,25 +176,42 @@ PRODUCT_PACKAGES += \
     libllvm-qcom \
     libllvm-qgl \
     libmdsprpc \
+    libnanopb \
+    libqmi_cci \
+    libqmi_common_so \
+    libqmi_csi \
+    libqmi_encdec \
     libscveCommon \
     libscveCommon_stub \
     libscveObjectSegmentation \
     libscveObjectSegmentation_stub \
     libscveObjectTracker \
     libscveObjectTracker_stub \
+    libsdm-disp-vndapis \
     libsdsprpc \
+    libssccalapi \
     libsysmon_cdsp_skel \
     libthermalclient \
     libvppclient \
     libvpphcp \
     libvpphvx \
     libvpplibrary \
+    vendor.display.color@1.0 \
+    vendor.display.color@1.1 \
+    vendor.display.color@1.2 \
+    vendor.display.color@1.3 \
+    vendor.display.color@1.4 \
+    vendor.display.color@1.5 \
+    vendor.display.postproc@1.0 \
     vendor.dolby.hardware.dms@2.0 \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
     vendor.qti.hardware.vpp@1.3 \
-    vendor.xiaomi.hardware.displayfeature@1.0 \
+    vendor.xiaomi.hardware.citsensorservice@1.0 \
+    vendor.xiaomi.hardware.citsensorservice@1.0_vendor \
+    vendor.xiaomi.hardware.citsensorservice@1.1 \
+    vendor.xiaomi.hardware.citsensorservice@1.1_vendor \
     btaudio_offload_if \
     sound_trigger.primary.kona \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
@@ -407,12 +427,8 @@ PRODUCT_PACKAGES += \
     libqdp \
     libqisl \
     libqmi \
-    libqmi_cci \
     libqmi_client_helper \
     libqmi_client_qmux \
-    libqmi_common_so \
-    libqmi_csi \
-    libqmi_encdec \
     libqmi_legacy \
     libqmiservices \
     libqrtr \
@@ -429,7 +445,6 @@ PRODUCT_PACKAGES += \
     libsdm-color \
     libsdm-colormgr-algo \
     libsdm-diag \
-    libsdm-disp-vndapis \
     libsdmextension \
     libsecureui \
     libsecureui_svcsock \
@@ -458,13 +473,6 @@ PRODUCT_PACKAGES += \
     unnhal-acc-common \
     unnhal-acc-hta \
     unnhal-acc-hvx \
-    vendor.display.color@1.0 \
-    vendor.display.color@1.1 \
-    vendor.display.color@1.2 \
-    vendor.display.color@1.3 \
-    vendor.display.color@1.4 \
-    vendor.display.color@1.5 \
-    vendor.display.postproc@1.0 \
     vendor.dolby.hardware.dms@2.0-impl \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.1 \
@@ -544,6 +552,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.latency@2.1 \
     capi_v2_aptX_CLHDADV_Encoder \
     capi_v2_aptX_CLHDAD_Speech_Decoder \
+    vendor.xiaomi.hardware.displayfeature@1.0 \
     vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk \
     com.qualcomm.qti.dpm.api@1.0 \
     lib-imsvideocodec \
@@ -604,6 +613,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.soter@1.0-service \
     vendor.qti.hardware.tui_comm@1.0-service-qti \
     vendor.qti.media.c2@1.0-service \
+    vendor.xiaomi.hardware.citsensorservice@1.1-service \
     vendor.xiaomi.hardware.displayfeature@1.0-service \
     vendor.xiaomi.hardware.touchfeature@1.0-service \
     ims_rtp_daemon \
